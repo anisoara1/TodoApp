@@ -26,9 +26,6 @@ function App() {
         <form onSubmit={handleSubmit}>
           <input
             placeholder="Enter a ToDo"
-            autoComplete="off"
-            type="text"
-            name="todo"
             style={{
               width: 350,
               padding: 10,
@@ -38,7 +35,16 @@ function App() {
             }}
             onChange={e => setTodo(e.target.value)}
           />
-          <button type="submit">Go</button>
+          <button
+            type="submit"
+            style={{
+              borderRadius: 25,
+              padding: 10,
+              marginLeft: 20,
+            }}
+          >
+            Go
+          </button>
         </form>
         <ul className="allTodos">
           {todos &&
