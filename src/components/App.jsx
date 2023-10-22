@@ -14,6 +14,9 @@ function App() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(AddTodoAction(todo));
+    const textField = document.getElementById('text-field');
+    console.log(textField.value);
+    textField.value = '';
   };
   const removeHandeler = t => {
     dispatch(RemoveTodoAction(t));
@@ -22,9 +25,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>ToDo List App</h2>
+        <h2>ToDo List</h2>
         <form onSubmit={handleSubmit}>
           <input
+            type="text"
+            id="text-field"
+            name="text-field"
             placeholder="Enter a ToDo"
             style={{
               width: 350,
